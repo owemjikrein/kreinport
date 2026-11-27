@@ -5,13 +5,14 @@
 
 :root {
     --black: #ffffff;
-    --panel: #fff7f8;
-    --panel-light: #ffe9ed;
+    --panel: #ffffff;
+    --panel-light: #f2f2f2;
     --red: #b5092b;
     --bright: #ed1740;
-    --muted: #79545d;
-    --white: #650d20;
-    --line: rgba(181, 9, 43, .17);
+    --muted: #555555;
+    --white: #1a1a1a;
+    --line: rgba(181, 9, 43, 0.2);
+}
 }
 
 * {
@@ -1943,138 +1944,88 @@ body {
     --line: rgba(181, 9, 43, 0.16);
 }
 
-/* =========================================
-   ANIMATED LAVA LAMP BACKGROUND
-========================================= */
+/* =====================================
+   WHITE & RED LAVA LAMP BACKGROUND
+===================================== */
 
 body {
-    background: #fffafa;
-    color: #650d20;
+    background: #ffffff;
+    color: #1a1a1a;
 }
 
-/* Main white background */
 .background-glow {
     position: fixed;
     inset: 0;
     z-index: -2;
     overflow: hidden;
     pointer-events: none;
-    background: #fffafa;
-    isolation: isolate;
+    background: #ffffff;
 }
 
-/* First flowing lava shape */
-.background-glow::before {
+/* Moving liquid shapes */
+.background-glow::before,
+.background-glow::after {
     content: "";
     position: absolute;
     width: 65vw;
     height: 65vw;
-    min-width: 500px;
-    min-height: 500px;
-    top: -25%;
-    left: -15%;
-    border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
-    background:
-        radial-gradient(
-            circle at 35% 35%,
-            rgba(237, 23, 64, 0.85),
-            rgba(181, 9, 43, 0.65) 45%,
-            rgba(255, 105, 130, 0.25) 72%,
-            transparent 100%
-        );
-    filter: blur(35px);
-    opacity: 0.75;
-    animation: lavaFlowOne 18s ease-in-out infinite alternate;
-}
-
-/* Second flowing lava shape */
-.background-glow::after {
-    content: "";
-    position: absolute;
-    width: 60vw;
-    height: 60vw;
     min-width: 450px;
     min-height: 450px;
-    right: -15%;
-    bottom: -30%;
-    border-radius: 60% 40% 35% 65% / 55% 60% 40% 45%;
-    background:
-        radial-gradient(
-            circle at 60% 45%,
-            rgba(181, 9, 43, 0.75),
-            rgba(237, 23, 64, 0.45) 48%,
-            rgba(255, 145, 165, 0.25) 75%,
-            transparent 100%
-        );
-    filter: blur(40px);
-    opacity: 0.7;
-    animation: lavaFlowTwo 22s ease-in-out infinite alternate;
+    border-radius: 43% 57% 65% 35% / 45% 40% 60% 55%;
+    background: #b5092b;
+    filter: blur(45px);
+    opacity: 0.92;
 }
 
-/* Lava movement */
-@keyframes lavaFlowOne {
+/* First lava shape */
+.background-glow::before {
+    top: -30%;
+    left: -15%;
+    animation: lavaMoveOne 18s ease-in-out infinite alternate;
+}
+
+/* Second lava shape */
+.background-glow::after {
+    right: -20%;
+    bottom: -35%;
+    width: 75vw;
+    height: 75vw;
+    background: #ed1740;
+    animation: lavaMoveTwo 22s ease-in-out infinite alternate;
+}
+
+@keyframes lavaMoveOne {
     0% {
-        transform: translate(-5%, -3%) rotate(0deg) scale(1);
-        border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        border-radius: 43% 57% 65% 35% / 45% 40% 60% 55%;
     }
 
     50% {
-        transform: translate(35%, 25%) rotate(100deg) scale(1.15);
-        border-radius: 60% 40% 45% 55% / 55% 65% 35% 45%;
+        transform: translate(25vw, 15vh) rotate(120deg) scale(1.15);
+        border-radius: 60% 40% 35% 65% / 55% 60% 40% 45%;
     }
 
     100% {
-        transform: translate(65%, 45%) rotate(190deg) scale(0.95);
+        transform: translate(45vw, 25vh) rotate(240deg) scale(0.9);
         border-radius: 35% 65% 55% 45% / 60% 35% 65% 40%;
     }
 }
 
-@keyframes lavaFlowTwo {
+@keyframes lavaMoveTwo {
     0% {
-        transform: translate(5%, 5%) rotate(0deg) scale(1);
+        transform: translate(0, 0) rotate(0deg) scale(1);
         border-radius: 60% 40% 35% 65% / 55% 60% 40% 45%;
     }
 
     50% {
-        transform: translate(-35%, -30%) rotate(-100deg) scale(1.2);
-        border-radius: 40% 60% 65% 35% / 45% 50% 50% 55%;
+        transform: translate(-25vw, -20vh) rotate(-120deg) scale(1.2);
+        border-radius: 40% 60% 65% 35% / 45% 55% 45% 55%;
     }
 
     100% {
-        transform: translate(-55%, -45%) rotate(-190deg) scale(0.9);
-        border-radius: 65% 35% 45% 55% / 40% 60% 35% 65%;
+        transform: translate(-40vw, -10vh) rotate(-240deg) scale(0.9);
+        border-radius: 55% 45% 40% 60% / 35% 65% 55% 45%;
     }
-}
-
-/* =========================================
-   LIGHT NAVIGATION
-========================================= */
-
-.navbar {
-    background: rgba(255, 255, 255, 0.82);
-    border-bottom: 1px solid rgba(181, 9, 43, 0.15);
-    backdrop-filter: blur(18px);
-}
-
-.logo {
-    color: #650d20;
-}
-
-.logo span {
-    color: var(--bright);
-}
-
-.navbar nav a {
-    color: #79545d;
-}
-
-.navbar nav a:hover,
-.navbar nav a.active {
-    color: #b5092b;
-}
-
-.nav-mark {
-    color: #a77c85;
 }
 
 /* =========================================
@@ -2426,5 +2377,232 @@ body {
     .background-glow::before,
     .background-glow::after {
         animation: none;
+    }
+}
+
+/* =====================================
+   WHITE & RED THEME — GLOBAL OVERRIDES
+===================================== */
+
+/* Navigation */
+.navbar {
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(181, 9, 43, 0.2);
+}
+
+.logo {
+    color: #1a1a1a;
+}
+
+.navbar nav a {
+    color: #444444;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #b5092b;
+}
+
+.nav-mark {
+    color: #666666;
+}
+
+/* Main page text */
+.home-copy h2,
+.text-link {
+    color: #333333;
+}
+
+.home-description,
+.heading-note,
+.family-intro-note {
+    color: #555555;
+}
+
+/* Panels and cards */
+.profile-panel,
+.detail-panel,
+.personal-info-panel,
+.personal-extra-panel,
+.timeline-content,
+.recognition-area,
+.school-section,
+.recognition-section,
+.gallery-card,
+.milestone-card {
+    background: rgba(255, 255, 255, 0.94);
+    border-color: rgba(181, 9, 43, 0.2);
+    color: #1a1a1a;
+}
+
+/* Panel headings */
+.profile-panel h2,
+.detail-panel h2,
+.timeline-content h3,
+.recognition-area h2,
+.award-info h3,
+.gallery-caption h2,
+.personal-info-panel h2,
+.personal-extra-panel h2,
+.school-section-heading h2,
+.recognition-text h3,
+.milestone-info h3 {
+    color: #1a1a1a;
+}
+
+/* Descriptions */
+.profile-quote,
+.detail-panel p,
+.timeline-content p,
+.award-info p,
+.gallery-description,
+.gallery-caption p,
+.recognition-text p,
+.milestone-info p {
+    color: #555555;
+}
+
+/* Motto */
+.motto-panel {
+    background: #ffffff;
+    border: 1px solid #b5092b;
+    color: #1a1a1a;
+}
+
+.motto-panel h2 {
+    color: #b5092b;
+}
+
+/* Information details */
+.information-item strong {
+    color: #222222;
+}
+
+.information-item {
+    border-bottom-color: rgba(181, 9, 43, 0.15);
+}
+
+/* Tags */
+.tag-list span {
+    color: #b5092b;
+    background: #ffffff;
+    border-color: #b5092b;
+}
+
+/* Education cards */
+.school-image-card,
+.recognition-card {
+    background: #ffffff;
+    border-color: rgba(181, 9, 43, 0.2);
+}
+
+.school-image-card figcaption h3 {
+    color: #222222;
+}
+
+/* Milestones */
+.milestone-card {
+    background: #ffffff;
+    border: 1px solid rgba(181, 9, 43, 0.2);
+}
+
+.milestone-info h3 {
+    color: #1a1a1a;
+}
+
+.milestone-info p {
+    color: #555555;
+}
+
+.interact-hint {
+    color: #555555;
+}
+
+/* Family gallery */
+.gallery-card:hover,
+.detail-panel:hover {
+    background: #f2f2f2;
+}
+
+/* Footer */
+.footer {
+    background: rgba(255, 255, 255, 0.95);
+    color: #555555;
+    border-top: 1px solid rgba(181, 9, 43, 0.2);
+}
+
+/* Portrait decoration */
+.portrait-index,
+.gallery-number,
+.photo-number {
+    background: rgba(181, 9, 43, 0.9);
+    color: #ffffff;
+}
+
+/* Intro screen */
+.intro-screen {
+    background: #ffffff;
+}
+
+.intro-content h1 {
+    color: #1a1a1a;
+}
+
+.intro-bunny {
+    filter: brightness(0) saturate(100%)
+            invert(12%) sepia(92%) saturate(4500%)
+            hue-rotate(335deg) brightness(85%);
+}
+
+/* Image viewer */
+.proof-modal {
+    background: rgba(255, 255, 255, 0.96);
+}
+
+.proof-close {
+    color: #b5092b;
+}
+
+/* Keep red accents */
+.eyebrow,
+.eyebrow span,
+.page-heading h1 span,
+.home-copy h1 span,
+.family-intro h1 span,
+.gallery-category,
+.timeline-date,
+.award-type,
+.section-kicker,
+.profile-tag,
+.column-label,
+.person-caption h3 {
+    color: #b5092b;
+}
+
+/* Buttons */
+.button-red {
+    background: #b5092b;
+    color: #ffffff;
+    border-color: #b5092b;
+}
+
+.button-red:hover {
+    background: #ed1740;
+}
+
+/* Home icon */
+.home-icon {
+    background: #b5092b;
+    border-color: #ed1740;
+}
+
+/* Mobile background */
+@media (max-width: 760px) {
+    .navbar {
+        background: rgba(255, 255, 255, 0.96);
+    }
+
+    .footer {
+        background: #ffffff;
     }
 }
