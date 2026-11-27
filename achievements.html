@@ -1,0 +1,800 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FLORES.IFF | Education & Achievements</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =====================================
+           HEADER: HOME ICON + NAME
+        ===================================== */
+
+        .brand-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .home-icon {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #b5092b;
+            border: 1px solid #ed1740;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .home-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: #ffffff;
+        }
+
+        .home-icon:hover {
+            background: #ed1740;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(237, 23, 64, 0.35);
+        }
+
+        @media (max-width: 700px) {
+            .brand-group {
+                gap: 9px;
+            }
+
+            .home-icon {
+                width: 31px;
+                height: 31px;
+                min-width: 31px;
+            }
+        }
+
+
+        /* =====================================
+           ACHIEVEMENT PAGE
+        ===================================== */
+
+        .achievement-page,
+        .achievement-page * {
+            box-sizing: border-box !important;
+        }
+
+        main.achievement-page {
+            display: block !important;
+            max-width: 1280px !important;
+            width: 92% !important;
+            margin: 0 auto !important;
+            padding: 12px 0 18px !important;
+        }
+
+        .achievement-page .page-heading {
+            text-align: center !important;
+            margin: 0 auto 16px !important;
+            max-width: 720px !important;
+        }
+
+        .achievement-page .page-heading h1 {
+            font-size: clamp(1.6rem, 2.5vw, 2.1rem) !important;
+            margin: 2px 0 4px !important;
+        }
+
+        .achievement-page .heading-note {
+            font-size: 0.8rem !important;
+            margin: 0 !important;
+        }
+
+
+        /* =====================================
+           TWO-COLUMN LAYOUT
+        ===================================== */
+
+        .milestones-two-col {
+            display: grid !important;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr) !important;
+            gap: 22px !important;
+            align-items: stretch !important;
+            width: 100% !important;
+        }
+
+        .left-graduation,
+        .right-certificates {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10px !important;
+            min-width: 0 !important;
+            width: 100% !important;
+        }
+
+        .column-label {
+            display: block !important;
+            font-size: 0.68rem !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.14em !important;
+            color: #e63946 !important;
+            text-transform: uppercase !important;
+            margin-bottom: -2px !important;
+        }
+
+
+        /* =====================================
+           CARD DESIGN
+        ===================================== */
+
+        .grad-featured-card,
+        .milestone-card {
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            background: rgba(255, 255, 255, 0.025) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 14px !important;
+            padding: 12px 14px !important;
+            cursor: pointer !important;
+            transition: 0.25s ease !important;
+            margin: 0 !important;
+        }
+
+        .grad-featured-card {
+            flex: 1 !important;
+            justify-content: space-between !important;
+        }
+
+        .grad-featured-card:hover,
+        .milestone-card:hover {
+            transform: translateY(-2px) !important;
+            border-color: rgba(230, 57, 70, 0.7) !important;
+            background: rgba(230, 57, 70, 0.06) !important;
+        }
+
+
+        /* =====================================
+           GRADUATION IMAGE
+        ===================================== */
+
+        .grad-landscape-frame {
+            width: 100% !important;
+            height: 245px !important;
+            border-radius: 10px !important;
+            overflow: hidden !important;
+            background: #1a1215 !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        .grad-landscape-frame img,
+        .milestone-thumb img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+        }
+
+        .grad-featured-body {
+            padding: 10px 2px 0 !important;
+            width: 100% !important;
+        }
+
+        .grad-featured-top {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            gap: 10px !important;
+            margin-bottom: 4px !important;
+        }
+
+        .grad-featured-top h3 {
+            font-size: 0.98rem !important;
+            color: #fff !important;
+            margin: 0 !important;
+        }
+
+        .grad-featured-sub {
+            font-size: 0.74rem !important;
+            font-weight: 600 !important;
+            color: #e63946 !important;
+            margin: 0 0 5px !important;
+        }
+
+        .grad-featured-desc {
+            font-size: 0.75rem !important;
+            color: #a8a2a6 !important;
+            margin: 0 !important;
+            line-height: 1.4 !important;
+        }
+
+
+        /* =====================================
+           CERTIFICATE CARDS
+        ===================================== */
+
+        .milestone-card {
+            gap: 8px !important;
+            padding: 10px 14px !important;
+        }
+
+        .milestone-top {
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+            width: 100% !important;
+        }
+
+        .milestone-thumb {
+            width: 76px !important;
+            height: 54px !important;
+            flex-shrink: 0 !important;
+            border-radius: 8px !important;
+            overflow: hidden !important;
+            background: #1a1215 !important;
+            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        }
+
+        .milestone-info {
+            min-width: 0 !important;
+            flex: 1 !important;
+        }
+
+        .milestone-info h3 {
+            font-size: 0.88rem !important;
+            color: #fff !important;
+            margin: 0 0 3px !important;
+            line-height: 1.2 !important;
+        }
+
+        .milestone-info p {
+            font-size: 0.73rem !important;
+            color: #a8a2a6 !important;
+            margin: 0 !important;
+            line-height: 1.3 !important;
+        }
+
+        .milestone-bottom {
+            display: flex !important;
+            justify-content: flex-end !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+            padding-top: 6px !important;
+            width: 100% !important;
+        }
+
+
+        /* =====================================
+           VIEW BUTTON
+        ===================================== */
+
+        .view-pill {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 5px !important;
+            padding: 3px 10px !important;
+            font-size: 0.62rem !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.12em !important;
+            text-transform: uppercase !important;
+            color: #fff !important;
+            background: rgba(230, 57, 70, 0.15) !important;
+            border: 1px solid rgba(230, 57, 70, 0.45) !important;
+            border-radius: 999px !important;
+            flex-shrink: 0 !important;
+        }
+
+        .milestone-card:hover .view-pill,
+        .grad-featured-card:hover .view-pill {
+            background: #e63946 !important;
+        }
+
+        .interact-hint {
+            text-align: center !important;
+            font-size: 0.72rem !important;
+            color: #7d757a !important;
+            margin: 12px 0 0 !important;
+        }
+
+
+        /* =====================================
+           IMAGE VIEWER
+        ===================================== */
+
+        .proof-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.90);
+            backdrop-filter: blur(6px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            z-index: 9999;
+        }
+
+        .proof-modal.open {
+            display: flex;
+        }
+
+        .proof-modal img {
+            max-width: min(92vw, 940px);
+            max-height: 85vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 1px solid rgba(230, 57, 70, 0.5);
+        }
+
+        .proof-close {
+            position: absolute;
+            top: 20px;
+            right: 28px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        .proof-close:hover {
+            color: #e63946;
+        }
+
+
+        /* =====================================
+           RESPONSIVE DESIGN
+        ===================================== */
+
+        @media (max-width: 900px) {
+            .milestones-two-col {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            main.achievement-page {
+                width: 94% !important;
+            }
+
+            .grad-landscape-frame {
+                height: 200px !important;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+
+    <div class="background-glow"></div>
+
+
+    <!-- =====================================
+         NAVIGATION
+    ===================================== -->
+
+    <header class="navbar">
+
+        <div class="brand-group">
+
+            <!-- CIRCULAR HOME ICON -->
+
+            <a
+                href="index.html"
+                class="home-icon"
+                aria-label="Home"
+                title="Home"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 10.8L12 3l9 7.8v9.1a1.1 1.1 0 0 1-1.1 1.1h-5.2v-6.2H9.3V21H4.1A1.1 1.1 0 0 1 3 19.9z"/>
+                </svg>
+            </a>
+
+
+            <!-- NAME -->
+
+            <a href="index.html" class="logo">
+                Krein Lara G.<span>Flores</span>
+            </a>
+
+        </div>
+
+
+        <!-- NAVIGATION LINKS -->
+
+        <nav>
+            <a href="personal.html">Personal Info</a>
+            <a href="achievements.html" class="active">Achievements</a>
+            <a href="family.html">Family & Friends</a>
+        </nav>
+
+
+        <span class="nav-mark">
+            MILESTONES / 2026
+        </span>
+
+    </header>
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ===================================== -->
+
+    <main class="page-content achievement-page">
+
+
+        <!-- PAGE HEADING -->
+
+        <section class="page-heading">
+
+            <p class="eyebrow">
+                <span></span> MY ACADEMIC JOURNEY
+            </p>
+
+            <h1>
+                Education <span>& Achievements.</span>
+            </h1>
+
+            <p class="heading-note">
+                The schools and milestones that are part of my journey.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             EDUCATION CARDS
+        ===================================== -->
+
+        <div class="milestones-two-col">
+
+
+            <!-- LEFT: GRADUATION PHOTO -->
+
+            <div class="left-graduation">
+
+                <span class="column-label">
+                    GRADUATION MILESTONE
+                </span>
+
+                <article
+                    class="grad-featured-card proof-trigger"
+                    data-proof="grad.jpg"
+                    role="button"
+                    tabindex="0"
+                    aria-label="View graduation photo"
+                >
+
+                    <div class="grad-landscape-frame">
+
+                        <img
+                            src="grad.jpg"
+                            alt="Graduation Photo"
+                        >
+
+                    </div>
+
+                    <div class="grad-featured-body">
+
+                        <div class="grad-featured-top">
+
+                            <h3>SENIOR GRADUATION HIGHLIGHT</h3>
+
+                            <span class="view-pill">
+                                View ↗
+                            </span>
+
+                        </div>
+
+                        <p class="grad-featured-sub">
+                            School Name • Batch '26
+                        </p>
+
+                        <p class="grad-featured-desc">
+                            A proud milestone marking the completion
+                            of my senior high school journey, celebrating
+                            years of growth, perseverance, and hard work.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- RIGHT: CERTIFICATES -->
+
+            <div class="right-certificates">
+
+
+                <!-- SENIOR HIGH -->
+
+                <span class="column-label">
+                    SENIOR HIGH SCHOOL
+                </span>
+
+                <article
+                    class="milestone-card proof-trigger"
+                    data-proof="diploma.jpg"
+                    role="button"
+                    tabindex="0"
+                    aria-label="View senior high certificate"
+                >
+
+                    <div class="milestone-top">
+
+                        <div class="milestone-thumb">
+
+                            <img
+                                src="diploma.jpg"
+                                alt="Senior High Certificate"
+                            >
+
+                        </div>
+
+                        <div class="milestone-info">
+
+                            <h3>Senior High Graduate</h3>
+
+                            <p>
+                                Don Bosco High School • Batch '26
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="milestone-bottom">
+                        <span class="view-pill">View ↗</span>
+                    </div>
+
+                </article>
+
+
+                <!-- JUNIOR HIGH -->
+
+                <span class="column-label">
+                    JUNIOR HIGH SCHOOL
+                </span>
+
+
+                <!-- JUNIOR HIGH CERTIFICATE 1 -->
+
+                <article
+                    class="milestone-card proof-trigger"
+                    data-proof="junior.jpg"
+                    role="button"
+                    tabindex="0"
+                    aria-label="View junior high certificate one"
+                >
+
+                    <div class="milestone-top">
+
+                        <div class="milestone-thumb">
+
+                            <img
+                                src="junior.jpg"
+                                alt="Junior High Certificate 1"
+                            >
+
+                        </div>
+
+                        <div class="milestone-info">
+
+                            <h3>Junior High Graduate</h3>
+
+                            <p>
+                                Don Bosco High School • Batch '26
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="milestone-bottom">
+                        <span class="view-pill">View ↗</span>
+                    </div>
+
+                </article>
+
+
+                <!-- JUNIOR HIGH CERTIFICATE 2 -->
+
+                <article
+                    class="milestone-card proof-trigger"
+                    data-proof="junior 7.jpg"
+                    role="button"
+                    tabindex="0"
+                    aria-label="View junior high certificate two"
+                >
+
+                    <div class="milestone-top">
+
+                        <div class="milestone-thumb">
+
+                            <img
+                                src="junior 7.jpg"
+                                alt="Junior High Certificate 2"
+                            >
+
+                        </div>
+
+                        <div class="milestone-info">
+
+                            <h3>Junior High Graduate</h3>
+
+                            <p>
+                                Rizal National High School • SY 2021–2022
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="milestone-bottom">
+                        <span class="view-pill">View ↗</span>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+        <p class="interact-hint">
+            SELECT ANY IMAGE CARD TO VIEW IT IN FULL SIZE.
+        </p>
+
+    </main>
+
+
+    <!-- =====================================
+         IMAGE VIEWER / LIGHTBOX
+    ===================================== -->
+
+    <div class="proof-modal" id="proofModal">
+
+        <button
+            class="proof-close"
+            id="proofClose"
+            aria-label="Close image viewer"
+        >
+            &times;
+        </button>
+
+        <img
+            id="proofModalImg"
+            src=""
+            alt="Enlarged certificate or graduation photo"
+        >
+
+    </div>
+
+
+    <!-- =====================================
+         FOOTER
+    ===================================== -->
+
+    <footer class="footer">
+
+        <span>
+            © 2026 KREIN LARA G. FLORES. All rights reserved.
+        </span>
+
+        <span>
+            <b>♥</b>
+        </span>
+
+    </footer>
+
+
+    <!-- =====================================
+         SHARED JAVASCRIPT
+    ===================================== -->
+
+    <script src="script.js"></script>
+
+
+    <!-- =====================================
+         IMAGE VIEWER JAVASCRIPT
+    ===================================== -->
+
+    <script>
+
+        const proofCards = document.querySelectorAll(".proof-trigger");
+        const proofModal = document.getElementById("proofModal");
+        const proofModalImg = document.getElementById("proofModalImg");
+        const proofClose = document.getElementById("proofClose");
+
+        function openProofImage(card) {
+
+            const imageSource = card.getAttribute("data-proof");
+
+            if (!imageSource) return;
+
+            proofModalImg.src = imageSource;
+            proofModal.classList.add("open");
+
+            document.body.style.overflow = "hidden";
+
+        }
+
+        function closeProofImage() {
+
+            proofModal.classList.remove("open");
+            proofModalImg.src = "";
+
+            document.body.style.overflow = "";
+
+        }
+
+
+        /* CLICK CARD TO OPEN */
+
+        proofCards.forEach(card => {
+
+            card.addEventListener("click", () => {
+                openProofImage(card);
+            });
+
+            card.addEventListener("keydown", event => {
+
+                if (event.key === "Enter" || event.key === " ") {
+
+                    event.preventDefault();
+                    openProofImage(card);
+
+                }
+
+            });
+
+        });
+
+
+        /* CLOSE BUTTON */
+
+        proofClose.addEventListener("click", closeProofImage);
+
+
+        /* CLICK OUTSIDE IMAGE */
+
+        proofModal.addEventListener("click", event => {
+
+            if (event.target === proofModal) {
+                closeProofImage();
+            }
+
+        });
+
+
+        /* ESCAPE KEY */
+
+        document.addEventListener("keydown", event => {
+
+            if (
+                event.key === "Escape" &&
+                proofModal.classList.contains("open")
+            ) {
+                closeProofImage();
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FLORES.IFF | Home</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =====================================
+           HEADER: HOME ICON + NAME
+        ===================================== */
+
+        .brand-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .home-icon {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #b5092b;
+            border: 1px solid #ed1740;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .home-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: #ffffff;
+        }
+
+        .home-icon:hover {
+            background: #ed1740;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(237, 23, 64, 0.35);
+        }
+
+        /* =====================================
+           HOME HERO LAYOUT
+        ===================================== */
+
+        .home-layout {
+            display: grid;
+            grid-template-columns: 0.88fr 1.12fr;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .home-copy .eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            margin-bottom: 14px;
+        }
+
+        .home-copy h1 {
+            font-size: clamp(2.35rem, 3.8vw, 3.35rem);
+            line-height: 1.06;
+            margin-bottom: 12px;
+        }
+
+        .home-copy h2 {
+            font-size: clamp(1rem, 1.35vw, 1.2rem);
+            font-weight: 500;
+            margin-bottom: 14px;
+        }
+
+        .home-description {
+            font-size: 0.9rem;
+            line-height: 1.65;
+            max-width: 410px;
+            margin-bottom: 24px;
+        }
+
+        /* =====================================
+           MAIN BUTTONS
+        ===================================== */
+
+        .home-actions .button {
+            padding: 12px 22px;
+            font-size: 0.78rem;
+        }
+
+        .home-actions .text-link {
+            font-size: 0.78rem;
+        }
+
+        /* =====================================
+           SOCIAL MEDIA ICONS
+        ===================================== */
+
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 24px;
+        }
+
+        .social-icon {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(230, 57, 70, 0.45);
+            border-radius: 50%;
+            background: rgba(230, 57, 70, 0.08);
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .social-icon svg {
+            width: 19px;
+            height: 19px;
+            fill: #f5f0f1;
+            transition: 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: #e63946;
+            border-color: #e63946;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(230, 57, 70, 0.25);
+        }
+
+        .social-icon:hover svg {
+            fill: white;
+        }
+
+        /* =====================================
+           PROFILE PORTRAIT
+        ===================================== */
+
+        .home-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .portrait-wrap {
+            width: min(95%, 520px);
+            aspect-ratio: 2 / 3;
+            height: auto;
+            max-height: 76vh;
+            min-height: 460px;
+            position: relative;
+            z-index: 2;
+            animation: portraitFloat 5s ease-in-out infinite;
+        }
+
+        .home-portrait {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+            position: relative;
+            z-index: 2;
+            border-radius: 10px;
+            border: 1px solid rgba(230, 57, 70, 0.35);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+        }
+
+        .portrait-index {
+            z-index: 3;
+        }
+
+        /* =====================================
+           RESPONSIVE DESIGN
+        ===================================== */
+
+        @media (max-width: 960px) {
+
+            .home-layout {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                text-align: center;
+            }
+
+            .home-copy .eyebrow {
+                justify-content: center;
+            }
+
+            .home-description {
+                margin-inline: auto;
+            }
+
+            .home-actions,
+            .home-bottom-note {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .portrait-wrap {
+                width: min(88%, 400px);
+                min-height: 380px;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .brand-group {
+                gap: 9px;
+            }
+
+            .home-icon {
+                width: 31px;
+                height: 31px;
+                min-width: 31px;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+
+            .portrait-wrap {
+                width: min(88%, 330px);
+                min-height: 360px;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body class="home-page">
+
+    <!-- =====================================
+         BUNNY INTRO
+    ===================================== -->
+
+    <div class="intro-screen" id="intro">
+
+        <div class="intro-content">
+
+            <img
+                src="bunny-icon.png"
+                alt="Bunny"
+                class="intro-bunny"
+            >
+
+            <p class="intro-brand">FLORES.IFF</p>
+
+            <h1>A LITTLE PIECE OF ME.</h1>
+
+            <span class="intro-line"></span>
+
+        </div>
+
+    </div>
+
+
+    <!-- BACKGROUND -->
+
+    <div class="background-glow"></div>
+
+
+    <!-- =====================================
+         NAVIGATION
+    ===================================== -->
+
+    <header class="navbar">
+
+        <div class="brand-group">
+
+            <!-- CIRCULAR HOME ICON -->
+
+            <a
+                href="index.html"
+                class="home-icon"
+                aria-label="Home"
+                title="Home"
+            >
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 10.8L12 3l9 7.8v9.1a1.1 1.1 0 0 1-1.1 1.1h-5.2v-6.2H9.3V21H4.1A1.1 1.1 0 0 1 3 19.9z"/>
+                </svg>
+
+            </a>
+
+
+            <!-- YOUR NAME -->
+
+            <a href="index.html" class="logo">
+                Krein Lara G.<span>Flores</span>
+            </a>
+
+        </div>
+
+
+        <!-- NAVIGATION LINKS -->
+
+        <nav>
+
+            <a href="personal.html">Personal Info</a>
+
+            <a href="achievements.html">Achievements</a>
+
+            <a href="family.html">Family & Friends</a>
+
+        </nav>
+
+
+        <span class="nav-mark">
+            PORTFOLIO / 2026
+        </span>
+
+    </header>
+
+
+    <!-- =====================================
+         HOME PAGE
+    ===================================== -->
+
+    <main class="page-content home-layout">
+
+
+        <!-- LEFT: INTRODUCTION -->
+
+        <section class="home-copy">
+
+            <p class="eyebrow">
+                <span></span> WELCOME TO MY SPACE
+            </p>
+
+
+            <h1>
+                Hello,<br>
+                I'm <span>Krein Lara.</span>
+            </h1>
+
+
+            <!-- MAIN BUTTONS -->
+
+            <div class="home-actions">
+
+                <a href="personal.html" class="button button-red">
+                    GET TO KNOW ME <span>↗</span>
+                </a>
+
+                <a href="achievements.html" class="text-link">
+                    VIEW MY JOURNEY <span>→</span>
+                </a>
+
+            </div>
+
+
+            <!-- SOCIAL MEDIA ICONS -->
+
+            <div class="social-links">
+
+                <!-- FACEBOOK -->
+
+                <a
+                    href="https://web.facebook.com/kreinlara.flores"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-icon"
+                    aria-label="Facebook"
+                    title="Facebook"
+                >
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.6V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2V10H7.5v3h2.7v8h3.3z"/>
+                    </svg>
+
+                </a>
+
+
+                <!-- DISCORD -->
+
+                <a
+                    href="https://discordapp.com/users/1493834588206796820"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-icon"
+                    aria-label="Discord"
+                    title="Discord"
+                >
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19.5 5.4a17 17 0 0 0-4.2-1.3l-.5 1a15 15 0 0 0-5.6 0l-.5-1a17 17 0 0 0-4.2 1.3C1.9 9.3 1.2 13.1 1.5 16.8a17 17 0 0 0 5.2 2.6l1.1-1.8-1.7-.8.4-.3a12 12 0 0 0 11 0l.4.3-1.7.8 1.1 1.8a17 17 0 0 0 5.2-2.6c.4-4.3-.7-8-3-11.4zM8.8 14.5c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2zm6.4 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2z"/>
+                    </svg>
+
+                </a>
+
+            </div>
+
+
+            <!-- BOTTOM NOTE -->
+
+            <div class="home-bottom-note">
+
+                <span>01 / 04</span>
+
+                <span>PERSONAL PORTFOLIO</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT: PROFILE PORTRAIT -->
+
+        <section class="home-visual">
+
+            <div class="portrait-label label-top">
+                CREATIVE MIND
+            </div>
+
+
+            <div class="portrait-wrap">
+
+                <div class="portrait-backdrop"></div>
+
+                <img
+                    src="profile.jpg"
+                    alt="Portrait of Krein Lara"
+                    class="home-portrait"
+                >
+
+                <span class="portrait-index">
+                    KL — 01
+                </span>
+
+            </div>
+
+
+            <div class="portrait-label label-bottom">
+                DESIGN • TECHNOLOGY • ME
+            </div>
+
+
+            <div class="orbit orbit-one"></div>
+
+            <div class="orbit orbit-two"></div>
+
+        </section>
+
+
+        <!-- SIDE DECORATION -->
+
+        <div class="side-decoration">
+            FLORES / PERSONAL ARCHIVE
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         FOOTER
+    ===================================== -->
+
+    <footer class="footer">
+
+        <span>© 2026 KREIN LARA G. FLORES. All rights reserved.</span>
+
+        <span>
+            <b>♥</b>
+        </span>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>

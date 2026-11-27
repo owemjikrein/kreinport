@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FLORES.IFF | Family & Friends</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =====================================
+           HEADER: HOME ICON + NAME
+        ===================================== */
+
+        .brand-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .home-icon {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #b5092b;
+            border: 1px solid #ed1740;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .home-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: #ffffff;
+        }
+
+        .home-icon:hover {
+            background: #ed1740;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(237, 23, 64, 0.35);
+        }
+
+        @media (max-width: 700px) {
+            .brand-group {
+                gap: 9px;
+            }
+
+            .home-icon {
+                width: 31px;
+                height: 31px;
+                min-width: 31px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+
+    <div class="background-glow"></div>
+
+
+    <!-- =====================================
+         NAVIGATION
+    ===================================== -->
+
+    <header class="navbar">
+
+        <div class="brand-group">
+
+            <!-- CIRCULAR HOME BUTTON -->
+
+            <a
+                href="index.html"
+                class="home-icon"
+                aria-label="Home"
+                title="Home"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 10.8L12 3l9 7.8v9.1a1.1 1.1 0 0 1-1.1 1.1h-5.2v-6.2H9.3V21H4.1A1.1 1.1 0 0 1 3 19.9z"/>
+                </svg>
+            </a>
+
+
+            <!-- NAME -->
+
+            <a href="index.html" class="logo">
+                Krein Lara G.<span>Flores</span>
+            </a>
+
+        </div>
+
+
+        <!-- NAVIGATION LINKS -->
+
+        <nav>
+            <a href="personal.html">Personal Info</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="family.html" class="active">Family & Friends</a>
+        </nav>
+
+
+        <span class="nav-mark">
+            PEOPLE / 2026
+        </span>
+
+    </header>
+
+
+    <!-- =====================================
+         FAMILY PAGE
+    ===================================== -->
+
+    <main class="page-content family-page">
+
+
+        <!-- PAGE HEADING -->
+
+        <section class="family-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    <span></span> MY FAVORITE PEOPLE
+                </p>
+
+                <h1>
+                    My Family <span>& Friends.</span>
+                </h1>
+
+            </div>
+
+            <p class="family-header-note">
+                The people who are part of my story, my memories,
+                and the moments I treasure.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             4-COLUMN PORTRAIT GRID
+        ===================================== -->
+
+        <section class="people-portrait-grid">
+
+
+            <!-- FATHER -->
+
+            <figure class="person-item">
+
+                <div class="person-frame">
+
+                    <img
+                        src="father.png"
+                        alt="Father"
+                    >
+
+                    <span class="person-num">01</span>
+
+                </div>
+
+                <figcaption class="person-caption">
+
+                    <h3>MY FATHER</h3>
+
+                    <p>
+                        A meaningful part of my family
+                    </p>
+
+                </figcaption>
+
+            </figure>
+
+
+            <!-- MOTHER -->
+
+            <figure class="person-item">
+
+                <div class="person-frame">
+
+                    <img
+                        src="mother.png"
+                        alt="Mother"
+                    >
+
+                    <span class="person-num">02</span>
+
+                </div>
+
+                <figcaption class="person-caption">
+
+                    <h3>MY MOTHER</h3>
+
+                    <p>
+                        Someone whose presence I value
+                    </p>
+
+                </figcaption>
+
+            </figure>
+
+
+            <!-- SIBLINGS -->
+
+            <figure class="person-item">
+
+                <div class="person-frame">
+
+                    <img
+                        src="siblings.png"
+                        alt="Siblings"
+                    >
+
+                    <span class="person-num">03</span>
+
+                </div>
+
+                <figcaption class="person-caption">
+
+                    <h3>MY SIBLINGS</h3>
+
+                    <p>
+                        My 3 siblings I share memories with
+                    </p>
+
+                </figcaption>
+
+            </figure>
+
+
+            <!-- FRIENDS -->
+
+            <figure class="person-item">
+
+                <div class="person-frame">
+
+                    <img
+                        src="friend.png"
+                        alt="Friends"
+                    >
+
+                    <span class="person-num">04</span>
+
+                </div>
+
+                <figcaption class="person-caption">
+
+                    <h3>MY FRIENDS</h3>
+
+                    <p>
+                        My best friend who makes moments memorable
+                    </p>
+
+                </figcaption>
+
+            </figure>
+
+        </section>
+
+
+        <!-- BOTTOM BAR -->
+
+        <div class="family-bottom-bar">
+
+            <span>
+                THE PEOPLE BEHIND MY MEMORIES
+            </span>
+
+            <span class="accent-count">
+                04 / 04
+            </span>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         FOOTER
+    ===================================== -->
+
+    <footer class="footer">
+
+        <span>
+            © 2026 KREIN LARA G. FLORES. All rights reserved.
+        </span>
+
+        <span>
+            <b>♥</b>
+        </span>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
