@@ -1926,3 +1926,505 @@ body {
         transition-duration: .01ms !important;
     }
 }
+
+
+/* =========================================
+   FLORES.IFF — WHITE & RED LAVA LAMP THEME
+========================================= */
+
+:root {
+    --black: #ffffff;
+    --panel: #fff5f6;
+    --panel-light: #ffe8ec;
+    --red: #b5092b;
+    --bright: #ed1740;
+    --muted: #79545d;
+    --white: #650d20;
+    --line: rgba(181, 9, 43, 0.16);
+}
+
+/* =========================================
+   ANIMATED LAVA LAMP BACKGROUND
+========================================= */
+
+body {
+    background: #fffafa;
+    color: #650d20;
+}
+
+/* Main white background */
+.background-glow {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+    background: #fffafa;
+    isolation: isolate;
+}
+
+/* First flowing lava shape */
+.background-glow::before {
+    content: "";
+    position: absolute;
+    width: 65vw;
+    height: 65vw;
+    min-width: 500px;
+    min-height: 500px;
+    top: -25%;
+    left: -15%;
+    border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
+    background:
+        radial-gradient(
+            circle at 35% 35%,
+            rgba(237, 23, 64, 0.85),
+            rgba(181, 9, 43, 0.65) 45%,
+            rgba(255, 105, 130, 0.25) 72%,
+            transparent 100%
+        );
+    filter: blur(35px);
+    opacity: 0.75;
+    animation: lavaFlowOne 18s ease-in-out infinite alternate;
+}
+
+/* Second flowing lava shape */
+.background-glow::after {
+    content: "";
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    min-width: 450px;
+    min-height: 450px;
+    right: -15%;
+    bottom: -30%;
+    border-radius: 60% 40% 35% 65% / 55% 60% 40% 45%;
+    background:
+        radial-gradient(
+            circle at 60% 45%,
+            rgba(181, 9, 43, 0.75),
+            rgba(237, 23, 64, 0.45) 48%,
+            rgba(255, 145, 165, 0.25) 75%,
+            transparent 100%
+        );
+    filter: blur(40px);
+    opacity: 0.7;
+    animation: lavaFlowTwo 22s ease-in-out infinite alternate;
+}
+
+/* Lava movement */
+@keyframes lavaFlowOne {
+    0% {
+        transform: translate(-5%, -3%) rotate(0deg) scale(1);
+        border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
+    }
+
+    50% {
+        transform: translate(35%, 25%) rotate(100deg) scale(1.15);
+        border-radius: 60% 40% 45% 55% / 55% 65% 35% 45%;
+    }
+
+    100% {
+        transform: translate(65%, 45%) rotate(190deg) scale(0.95);
+        border-radius: 35% 65% 55% 45% / 60% 35% 65% 40%;
+    }
+}
+
+@keyframes lavaFlowTwo {
+    0% {
+        transform: translate(5%, 5%) rotate(0deg) scale(1);
+        border-radius: 60% 40% 35% 65% / 55% 60% 40% 45%;
+    }
+
+    50% {
+        transform: translate(-35%, -30%) rotate(-100deg) scale(1.2);
+        border-radius: 40% 60% 65% 35% / 45% 50% 50% 55%;
+    }
+
+    100% {
+        transform: translate(-55%, -45%) rotate(-190deg) scale(0.9);
+        border-radius: 65% 35% 45% 55% / 40% 60% 35% 65%;
+    }
+}
+
+/* =========================================
+   LIGHT NAVIGATION
+========================================= */
+
+.navbar {
+    background: rgba(255, 255, 255, 0.82);
+    border-bottom: 1px solid rgba(181, 9, 43, 0.15);
+    backdrop-filter: blur(18px);
+}
+
+.logo {
+    color: #650d20;
+}
+
+.logo span {
+    color: var(--bright);
+}
+
+.navbar nav a {
+    color: #79545d;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #b5092b;
+}
+
+.nav-mark {
+    color: #a77c85;
+}
+
+/* =========================================
+   SHARED TEXT COLORS
+========================================= */
+
+.eyebrow,
+.page-heading h1 span,
+.home-copy h1 span,
+.family-intro h1 span {
+    color: var(--red);
+}
+
+.heading-note,
+.home-description,
+.family-intro-note {
+    color: #79545d;
+}
+
+.home-copy h2 {
+    color: #79545d;
+}
+
+.text-link {
+    color: #650d20;
+}
+
+.home-bottom-note,
+.family-bottom-note {
+    color: #a77c85;
+}
+
+/* =========================================
+   WHITE PANELS
+========================================= */
+
+.profile-panel,
+.detail-panel,
+.timeline-content,
+.recognition-area,
+.school-section,
+.recognition-section,
+.personal-info-panel,
+.personal-extra-panel,
+.gallery-card,
+.milestone-card {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: rgba(181, 9, 43, 0.16);
+    box-shadow: 0 8px 25px rgba(120, 0, 25, 0.045);
+}
+
+.profile-panel h2,
+.detail-panel h2,
+.timeline-content h3,
+.recognition-area h2,
+.award-info h3,
+.personal-info-panel h2,
+.personal-extra-panel h2,
+.school-section-heading h2,
+.recognition-text h3,
+.gallery-caption h2,
+.milestone-info h3 {
+    color: #650d20;
+}
+
+.profile-quote,
+.detail-panel p,
+.timeline-content p,
+.award-info p,
+.information-item strong,
+.gallery-description,
+.person-caption p,
+.milestone-info p {
+    color: #79545d;
+}
+
+.detail-panel:hover,
+.timeline-content:hover,
+.gallery-card:hover,
+.milestone-card:hover {
+    background: #fff0f2;
+    border-color: rgba(237, 23, 64, 0.55);
+}
+
+/* =========================================
+   PERSONAL INFORMATION
+========================================= */
+
+.motto-panel {
+    background: linear-gradient(
+        110deg,
+        #fff0f2,
+        #ffffff,
+        #ffe5e9
+    );
+    border-color: rgba(181, 9, 43, 0.25);
+}
+
+.motto-panel h2 {
+    color: #650d20;
+}
+
+.personal-info-panel,
+.personal-extra-panel {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.information-item {
+    border-bottom-color: rgba(181, 9, 43, 0.12);
+}
+
+.information-item strong {
+    color: #650d20;
+}
+
+.tag-list span {
+    color: #8d1831;
+    background: #fff0f2;
+    border-color: rgba(181, 9, 43, 0.25);
+}
+
+/* =========================================
+   EDUCATION & ACHIEVEMENTS
+========================================= */
+
+.school-image-card,
+.recognition-card,
+.award-display {
+    background: rgba(255, 245, 246, 0.9);
+    border-color: rgba(181, 9, 43, 0.15);
+}
+
+.school-image-card figcaption h3 {
+    color: #650d20;
+}
+
+.timeline-level {
+    color: #8d1831 !important;
+}
+
+.timeline {
+    border-left-color: rgba(181, 9, 43, 0.45);
+}
+
+.timeline-marker {
+    background: var(--bright);
+    box-shadow: 0 0 15px rgba(237, 23, 64, 0.3);
+}
+
+.column-label {
+    color: var(--red);
+}
+
+.interact-hint {
+    color: #a77c85;
+}
+
+/* =========================================
+   FAMILY & FRIENDS
+========================================= */
+
+.gallery-card {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.gallery-image {
+    background: #ffe8ec;
+}
+
+.gallery-caption h2 {
+    color: #650d20;
+}
+
+.person-frame {
+    background: #ffe8ec;
+    border-color: rgba(181, 9, 43, 0.18);
+    box-shadow: 0 10px 25px rgba(120, 0, 25, 0.08);
+}
+
+.person-item:hover .person-frame {
+    border-color: var(--bright);
+    box-shadow: 0 15px 35px rgba(181, 9, 43, 0.16);
+}
+
+.person-caption h3 {
+    color: var(--red);
+}
+
+.family-bottom-bar {
+    border-top-color: rgba(181, 9, 43, 0.15);
+    color: #a77c85;
+}
+
+/* =========================================
+   BUTTONS AND ACCENTS
+========================================= */
+
+.button-red {
+    background: var(--red);
+    border-color: var(--red);
+    color: #ffffff;
+}
+
+.button-red:hover {
+    background: var(--bright);
+    box-shadow: 0 10px 25px rgba(237, 23, 64, 0.2);
+}
+
+.text-link:hover {
+    color: var(--red);
+}
+
+.portrait-backdrop {
+    background: rgba(181, 9, 43, 0.08);
+    border-color: rgba(181, 9, 43, 0.5);
+}
+
+.home-portrait {
+    border-color: rgba(181, 9, 43, 0.2);
+    box-shadow: 0 20px 45px rgba(120, 0, 25, 0.12);
+}
+
+.orbit {
+    border-color: rgba(181, 9, 43, 0.16);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background: rgba(255, 255, 255, 0.88);
+    color: #a77c85;
+    border-top-color: rgba(181, 9, 43, 0.15);
+    backdrop-filter: blur(15px);
+}
+
+.footer b {
+    color: var(--red);
+}
+
+/* =========================================
+   WHITE & RED BUNNY INTRO
+========================================= */
+
+.intro-screen {
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(237, 23, 64, 0.2),
+            transparent 50%
+        ),
+        #fffafa;
+}
+
+.intro-brand {
+    color: var(--red);
+}
+
+.intro-content h1 {
+    color: #650d20;
+}
+
+.intro-line {
+    background: var(--bright);
+}
+
+.intro-bunny {
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(15%)
+        sepia(85%)
+        saturate(4000%)
+        hue-rotate(330deg)
+        brightness(85%);
+}
+
+/* =========================================
+   IMAGE VIEWER
+========================================= */
+
+.proof-modal {
+    background: rgba(70, 0, 15, 0.82);
+    backdrop-filter: blur(12px);
+}
+
+.proof-modal img {
+    border-color: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+.proof-close {
+    color: #ffffff;
+}
+
+.proof-close:hover {
+    color: #ff9aaa;
+}
+
+/* =========================================
+   HOME ICON
+========================================= */
+
+.home-icon {
+    background: var(--red);
+    border-color: var(--bright);
+}
+
+.home-icon:hover {
+    background: var(--bright);
+}
+
+/* =========================================
+   MOBILE BACKGROUND
+========================================= */
+
+@media (max-width: 760px) {
+    .navbar {
+        background: rgba(255, 255, 255, 0.92);
+    }
+
+    .background-glow::before {
+        width: 110vw;
+        height: 110vw;
+        min-width: 0;
+        min-height: 0;
+        filter: blur(28px);
+    }
+
+    .background-glow::after {
+        width: 100vw;
+        height: 100vw;
+        min-width: 0;
+        min-height: 0;
+        filter: blur(30px);
+    }
+
+    .footer {
+        background: rgba(255, 255, 255, 0.92);
+    }
+}
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .background-glow::before,
+    .background-glow::after {
+        animation: none;
+    }
+}
